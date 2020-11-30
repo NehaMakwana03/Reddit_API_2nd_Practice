@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "b99888ec-96f5-4a82-9987-0ac7a5da4bdf",
+		"name": "Reddit API ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "First Case",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb5544c6-9754-4e50-8726-39512a095a90",
+						"exec": [
+							"pm.test(\"C357 Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "MecQ6Vp1cp_oOQ",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "6TZ58_kcWQJuyEqumebeMKWa8ujdlw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "lss_mobile_20",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "endanger bonsai opposite",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.reddit.com/api/v1/access_token",
+					"protocol": "https",
+					"host": [
+						"www",
+						"reddit",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"access_token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ME",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Access_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://oauth.reddit.com/api/v1/me",
+					"protocol": "https",
+					"host": [
+						"oauth",
+						"reddit",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "KarmaCheck",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Access_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/v1/me/karma",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"me",
+						"karma"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pref",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Access_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/v1/me/prefs",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"me",
+						"prefs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Access_Token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{Url}}/api/report",
+					"host": [
+						"{{Url}}"
+					],
+					"path": [
+						"api",
+						"report"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
