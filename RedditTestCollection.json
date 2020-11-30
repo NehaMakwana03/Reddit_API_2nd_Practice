@@ -15,7 +15,18 @@
 						"exec": [
 							"pm.test(\"C357 Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
-							"});"
+							"});\r",
+							"\r",
+							"let response = pm.response.json();\r",
+							"pm.test(\"C357 Verify user token has generated\" , function(){\r",
+							"pm.environment.set(\"Access_Token\" , response.access_token);\r",
+							"})\r",
+							"\r",
+							"\r",
+							"pm.test(\"Content-Type is present\", function () {\r",
+							"    pm.response.to.have.header(\"Content-Type\", \"application/json; charset=UTF-8\");\r",
+							"});\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -78,6 +89,20 @@
 		},
 		{
 			"name": "ME",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b6efb987-e9af-4583-8fa9-2d9f3f177aa6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -117,6 +142,20 @@
 		},
 		{
 			"name": "KarmaCheck",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "840844de-bb4b-464f-9d4d-2925de31a901",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -147,6 +186,20 @@
 		},
 		{
 			"name": "Pref",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "45986904-e939-447d-974a-4236c0d0493b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -177,6 +230,20 @@
 		},
 		{
 			"name": "Report",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6e38609e-fc14-42e5-90e3-519c224fff50",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
